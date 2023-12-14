@@ -1,0 +1,13 @@
+tap "azure/functions"
+tap "homebrew/bundle"
+tap "homebrew/services"
+brew "fzf"
+brew "gnu-sed"
+brew "jq"
+brew "fd"
+brew "lazygit"
+brew "neovim"
+brew "postgresql@15", restart_service: true
+brew "ripgrep"
+brew "azure/functions/azure-functions-core-tools@4"
+cask "kitty"

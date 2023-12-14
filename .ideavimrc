@@ -1,0 +1,47 @@
+let mapleader=" "
+
+nmap <leader>e <Action>(GotoNextError)
+nmap <leader>E <Action>(GotoPreviousError)
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>a <Action>(GotoAction)
+nmap <leader>g <Action>(GotoRelated)
+nmap <Leader>s <Action>(SurroundWith)
+nmap <leader>u <Action>(FindUsages)
+nmap <Leader>b <Action>(Git.Branches)
+
+" Tab navigation
+nmap <leader>h <Action>(PreviousTab)
+nmap <leader>l <Action>(NextTab)
+nmap <leader>1 <Action>(GoToTab1)
+nmap <leader>2 <Action>(GoToTab2)
+nmap <leader>3 <Action>(GoToTab3)
+nmap <leader>4 <Action>(GoToTab4)
+nmap <leader>5 <Action>(GoToTab5)
+nmap <leader>6 <Action>(GoToTab6)
+nmap <leader>7 <Action>(GoToTab7)
+nmap <leader>8 <Action>(GoToTab8)
+nmap <leader>9 <Action>(GoToTab9)
+
+" Search and replace
+nnoremap <D-r> :%s//c<left><left>
+vnoremap <D-r> \"sy:%s/<c-r>s//c<left><left>
+
+nnoremap U <C-R>
+vnoremap < <gv
+vnoremap > >gv
+noremap L $
+noremap H ^
+
+set ideajoin                " join command will be performed via IDE
+set clipboard+=unnamed      " use the clipboard register for all yank, delete, change and put operations
+set clipboard+=ideaput      " enable native idea paste action for put operations
+set scrolloff=5             " minimal number of screen lines to keep above and below the cursor
+set incsearch               " show where search pattern typed so far matches
+set relativenumber          " show the line number relative to the line with the cursor
+set number                  " print the line number in front of each line
+set ignorecase              " ignore case in search patterns
+set smartcase               " no ignore case when pattern is uppercase
+set gdefault                " the :substitute flag 'g' is by default
+set showcmd                 " show (partial) command in the status bar
+set wrapscan                " searches wrap around the end of file
+set ideastatusicon=gray     " use the gray version of the IdeaVim icon in the status bar

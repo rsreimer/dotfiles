@@ -1,0 +1,12 @@
+/*
+!/.config
+/.config/*
+!/.config/nvim
+!/.config/kitty
+!/.ideavimrc
+!/.zprofile
+!/.zshrc
+!/.zshenv
+!/.gitignore
+!/.p10k.zsh
+!/Brewfile
