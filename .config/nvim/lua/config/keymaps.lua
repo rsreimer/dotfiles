@@ -5,6 +5,10 @@
 local map = vim.keymap.set
 local del = vim.keymap.del
 
+-- Save file
+del({ "i", "x", "n", "s" }, "<C-s>")
+map({ "i", "x", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+
 -- Git
 map("n", "<leader>ghf", "<cmd>Telescope git_bcommits<cr>", { desc = "File history" })
 map("v", "<leader>ghf", "<cmd>Telescope git_bcommits_range<cr>", { desc = "Selection history" })
