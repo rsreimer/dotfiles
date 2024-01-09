@@ -7,10 +7,11 @@ plugins=()
 source $ZSH/oh-my-zsh.sh
 source ~/.p10k.zsh
 
-alias e="kitten @ launch --type=tab --cwd=current --keep-focus lazygit && kitten @ launch --type=tab --tab-title=term --cwd=current --keep-focus && kitty @ set-tab-title \"\$(basename \$(pwd))\" && nvim ."
-alias ec="cd ~/.config/nvim && kitty @ set-tab-title \"nvim config\" && nvim ."
-
+alias n="nvim"
 alias g="lazygit"
+
+alias e="kitty @ set-tab-title \"\$(basename \$(pwd))\" && nvim ."
+alias ec="cd ~/.config/nvim && kitty @ set-tab-title \"nvim config\" && nvim ."
 
 # Node version manager
 # export NVM_DIR="$HOME/.nvm"

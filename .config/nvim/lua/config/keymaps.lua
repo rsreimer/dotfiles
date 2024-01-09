@@ -29,8 +29,8 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- Home/End keymaps
-map("", "L", "$", { desc = "End of line" })
-map("", "H", "^", { desc = "Start of line" })
+-- map("", "L", "$", { desc = "End of line" })
+-- map("", "H", "^", { desc = "Start of line" })
 
 -- Remove terminal keymaps
 del("n", "<leader>ft")
