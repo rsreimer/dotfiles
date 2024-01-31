@@ -1,4 +1,14 @@
 return {
+	{ "nvim-treesitter/nvim-treesitter-textobjects" },
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup({
+				mode = "cursor",
+				max_lines = 3,
+			})
+		end,
+	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -41,23 +51,23 @@ return {
 					},
 				},
 				textobjects = {
+					select = {
+						enable = true,
+						lookahead = true,
+						keymaps = {
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+						},
+					},
 					move = {
 						enable = true,
+						set_jumps = true,
 						goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer" },
 						goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer" },
 						goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer" },
 						goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer" },
 					},
 				},
-			})
-		end,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		config = function()
-			require("treesitter-context").setup({
-				mode = "cursor",
-				max_lines = 3,
 			})
 		end,
 	},
