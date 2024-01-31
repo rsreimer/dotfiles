@@ -2,6 +2,7 @@
 !/.config
 /.config/*
 !/.config/nvim
+!/.config/nvim-custom
 !/.config/kitty
 !/.ideavimrc
 !/.zprofile
