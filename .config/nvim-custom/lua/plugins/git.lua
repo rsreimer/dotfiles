@@ -1,21 +1,19 @@
 return {
 	{
 		"lewis6991/gitsigns.nvim",
-		opts = {
-			on_attach = function(buffer)
-				local gs = package.loaded.gitsigns
+		config = function()
+			require("gitsigns").setup({
+				on_attach = function(buffer)
+					local gs = package.loaded.gitsigns
 
-				local function map(mode, l, r, desc)
-					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
-				end
+					vim.keymap.map("n", "]h", gs.next_hunk, { buffer = buffer, desc = "Next Hunk" })
+					vim.keymap.map("n", "[h", gs.prev_hunk, { buffer = buffer, desc = "Prev Hunk" })
 
-				map("n", "]h", gs.next_hunk, "Next Hunk")
-				map("n", "[h", gs.prev_hunk, "Prev Hunk")
-
-				map("n", "<leader>gb", function()
-					gs.blame_line({ full = true })
-				end, "Blame Line")
-			end,
-		},
+					vim.keymap.map("n", "<leader>gb", function()
+						gs.blame_line({ full = true })
+					end, { buffer = buffer, desc = "Blame Line" })
+				end,
+			})
+		end,
 	},
 }
