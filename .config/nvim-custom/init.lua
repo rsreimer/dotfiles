@@ -9,7 +9,5 @@ require("config.keymaps")
 
 -- TODO: Mini.ai / tree sitter text objects
 -- TODO: Comments: Plugins > Coding > mini.comment
--- TODO: Telescope with fzf
--- TODO: Highlight word vim-illuminate
 -- TODO: DAP
 -- TODO: Test Neotest
