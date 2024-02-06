@@ -10,7 +10,7 @@ source ~/.p10k.zsh
 alias g="lazygit"
  
 # Custom nvim config
-alias n="NVIM_APPNAME=nvim-custom nvim"
+alias n="NVIM_APPNAME=nvim-custom nvim ."
 alias nc="cd ~/.config/nvim-custom && n ."
 
 alias e="kitty @ set-tab-title \"\$(basename \$(pwd))\" && nvim ."
