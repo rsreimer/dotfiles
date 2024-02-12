@@ -7,13 +7,7 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
-		{
-			"zbirenbaum/copilot-cmp",
-			dependencies = "copilot.lua",
-			config = function()
-				require("copilot_cmp").setup()
-			end,
-		},
+		"zbirenbaum/copilot-cmp",
 	},
 	config = function()
 		local cmp = require("cmp")

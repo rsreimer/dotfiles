@@ -1,6 +1,6 @@
 return {
 	"mfussenegger/nvim-dap",
-	opts = function()
+	config = function()
 		local dap = require("dap")
 
 		for _, language in ipairs({
@@ -21,13 +21,11 @@ return {
 			}
 		end
 	end,
+	keys = {
+		-- goto
+		{ "<leader>dg", false },
 
--- stylua: ignore
-keys = {
-    -- goto
-    { "<leader>dg", false},
-
-    -- session
-    { "<leader>ds", false},
-  },
+		-- session
+		{ "<leader>ds", false },
+	},
 }
