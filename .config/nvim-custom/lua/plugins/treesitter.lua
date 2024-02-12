@@ -10,6 +10,46 @@ return {
 		end,
 	},
 	{
+		"echasnovski/mini.ai",
+		config = function()
+			local ai = require("mini.ai")
+
+			ai.setup({
+				n_lines = 500,
+			})
+
+			-- register all text objects with which-key
+			local desc = {
+				[" "] = "Whitespace",
+				['"'] = 'Balanced "',
+				["'"] = "Balanced '",
+				["`"] = "Balanced `",
+				["("] = "Balanced (",
+				[")"] = "Balanced )",
+				[">"] = "Balanced >",
+				["<lt>"] = "Balanced <",
+				["]"] = "Balanced ]",
+				["["] = "Balanced [",
+				["}"] = "Balanced }",
+				["{"] = "Balanced {",
+				["?"] = "User Prompt",
+				_ = "Underscore",
+				a = "Argument",
+				b = "Balanced ), ], }",
+				c = "Class",
+				f = "Function",
+				o = "Block, conditional, loop",
+				q = "Quote `, \", '",
+			}
+
+			require("which-key").register({
+				mode = { "o", "x" },
+				i = desc,
+				a = desc,
+			})
+		end,
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
@@ -54,18 +94,10 @@ return {
 					select = {
 						enable = true,
 						lookahead = true,
-						keymaps = {
-							["af"] = "@function.outer",
-							["if"] = "@function.inner",
-						},
 					},
 					move = {
 						enable = true,
 						set_jumps = true,
-						goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer" },
-						goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer" },
-						goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer" },
-						goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer" },
 					},
 				},
 			})

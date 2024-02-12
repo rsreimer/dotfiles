@@ -17,4 +17,29 @@ function M.install()
 	vim.opt.rtp:prepend(lazypath)
 end
 
+function M.setup()
+	require("lazy").setup({
+		spec = {
+			{ import = "plugins" },
+		},
+		dev = {
+			path = "~/nvim-plugins",
+		},
+		performance = {
+			rtp = {
+				disabled_plugins = {
+					"gzip",
+					"matchit",
+					"matchparen",
+					"netrwPlugin",
+					"tarPlugin",
+					"tohtml",
+					"tutor",
+					"zipPlugin",
+				},
+			},
+		},
+	})
+end
+
 return M

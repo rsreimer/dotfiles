@@ -14,8 +14,8 @@ return {
         end
 
         -- stylua: ignore start
-        map("n", "<leader>ghB", function() gs.blame_line({ full = true }) end, "Blame Details")
-        map("n", "<leader>ghb", function() gs.toggle_current_line_blame() end, "Toggle Blame")
+        map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "blame details")
+        map("n", "<leader>ghb", function() gs.toggle_current_line_blame() end, "toggle blame")
       end,
     },
   },

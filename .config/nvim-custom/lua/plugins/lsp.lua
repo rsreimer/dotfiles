@@ -5,7 +5,10 @@ return {
 			local lspconfig = require("lspconfig")
 			local cmp = require("cmp_nvim_lsp").default_capabilities()
 
-			lspconfig.angularls.setup({ capabilities = cmp })
+			lspconfig.angularls.setup({
+				capabilities = cmp,
+				root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json"),
+			})
 			lspconfig.bashls.setup({ capabilities = cmp })
 			lspconfig.cssls.setup({ capabilities = cmp })
 			lspconfig.html.setup({ capabilities = cmp })
