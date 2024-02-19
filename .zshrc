@@ -13,8 +13,8 @@ alias g="lazygit"
 
 # LazyVim
 alias el="kitty @ set-tab-title \"\$(basename \$(pwd))\" && NVIM_APPNAME=lazyvim nvim ."
-alias elc="cd ~/.config/nvim-custom && n"
+alias elc="cd ~/.config/nvim-custom && el"
 
 # Neovim
 alias e="kitty @ set-tab-title \"\$(basename \$(pwd))\" && nvim ."
-alias ec="cd ~/.config/nvim && kitty @ set-tab-title \"nvim config\" && nvim ."
+alias ec="cd ~/.config/nvim && e"

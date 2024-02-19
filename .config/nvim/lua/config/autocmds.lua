@@ -1,8 +1,3 @@
--- Auto save
-vim.api.nvim_create_autocmd("WinEnter", {
-	command = "wa",
-})
-
 -- Disable autoformat for markdown files
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "md" },
