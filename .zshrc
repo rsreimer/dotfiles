@@ -10,13 +10,11 @@ source $ZSH/oh-my-zsh.sh
 source ~/.p10k.zsh
 
 alias g="lazygit"
- 
-# Custom nvim config
-alias n="kitty @ set-tab-title \"\$(basename \$(pwd))\" && NVIM_APPNAME=nvim-custom nvim ."
-alias nc="cd ~/.config/nvim-custom && n"
-
 
 # LazyVim
+alias el="kitty @ set-tab-title \"\$(basename \$(pwd))\" && NVIM_APPNAME=lazyvim nvim ."
+alias elc="cd ~/.config/nvim-custom && n"
+
+# Neovim
 alias e="kitty @ set-tab-title \"\$(basename \$(pwd))\" && nvim ."
 alias ec="cd ~/.config/nvim && kitty @ set-tab-title \"nvim config\" && nvim ."
-

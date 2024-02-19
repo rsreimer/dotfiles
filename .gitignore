@@ -1,8 +1,8 @@
 /*
 !/.config
 /.config/*
+!/.config/lazyvim
 !/.config/nvim
-!/.config/nvim-custom
 !/.config/kitty
 !/.ideavimrc
 !/.zprofile
