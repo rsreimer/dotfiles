@@ -20,23 +20,73 @@ return {
     },
     keys = {
       -- files
-      { "<leader><leader>", "<cmd>lua require('telescope').extensions.magnet.find_file()<cr>", desc = "Find Files" },
-      { "<leader>sf", "<cmd>lua require('telescope').extensions.magnet.find_file()<cr>", desc = "Find Files" },
+      {
+        "<leader><leader>",
+        function()
+          require("telescope").extensions.magnet.find_file({
+            hidden = true,
+          })
+        end,
+        desc = "Find Files",
+      },
+      {
+        "<leader>sf",
+        function()
+          require("telescope").extensions.magnet.find_file({
+            hidden = true,
+          })
+        end,
+        desc = "Find Files",
+      },
       {
         "<leader>sF",
-        "<cmd>lua require('telescope').extensions.magnet.find_file({ pick_dir = true })<cr>",
-        desc = "Find Files in Directory",
+        function()
+          require("telescope").extensions.magnet.find_file({
+            hidden = true,
+            pick_dir = true,
+          })
+        end,
+        desc = "Find Files In Directory",
       },
 
       -- grep
       {
         "<leader>sg",
-        "<cmd>lua require('telescope').extensions.magnet.find_text()<cr>",
+        function()
+          require("telescope").extensions.magnet.find_text({
+            vimgrep_arguments = {
+              "rg",
+              "--color=never",
+              "--no-heading",
+              "--with-filename",
+              "--line-number",
+              "--column",
+              "--smart-case",
+              "--hidden",
+              "--glob=!.git",
+            },
+          })
+        end,
         desc = "Grep",
       },
       {
         "<leader>sG",
-        "<cmd>lua require('telescope').extensions.magnet.find_text({ pick_dir = true })<cr>",
+        function()
+          require("telescope").extensions.magnet.find_text({
+            vimgrep_arguments = {
+              "rg",
+              "--color=never",
+              "--no-heading",
+              "--with-filename",
+              "--line-number",
+              "--column",
+              "--smart-case",
+              "--hidden",
+              "--glob=!.git",
+            },
+            pick_dir = true,
+          })
+        end,
         desc = "Grep in Directory",
       },
 
