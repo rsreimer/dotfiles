@@ -5,6 +5,9 @@
 local map = vim.keymap.set
 local del = vim.keymap.del
 
+-- Open file/url path under cursor in system app
+map("n", "gx", "<cmd>execute '!open ' . shellescape(expand('<cfile>'), 1)<cr>")
+
 -- Save file
 del({ "i", "x", "n", "s" }, "<C-s>")
 map({ "i", "x", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
@@ -27,10 +30,6 @@ map("n", "U", "<C-R>", { desc = "Redo" })
 -- Keep highlight after indent
 map("v", "<", "<gv")
 map("v", ">", ">gv")
-
--- Home/End keymaps
--- map("", "L", "$", { desc = "End of line" })
--- map("", "H", "^", { desc = "Start of line" })
 
 -- Remove terminal keymaps
 del("n", "<leader>ft")
