@@ -6,11 +6,3 @@
 vim.api.nvim_create_autocmd("WinEnter", {
   command = "wa",
 })
-
--- Disable autoformat for markdown files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "md" },
-  callback = function()
-    vim.b.autoformat = false
-  end,
-})
