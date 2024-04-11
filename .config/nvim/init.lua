@@ -8,4 +8,6 @@ require("config.autocmds")
 require("config.keymaps")
 
 -- TODO: DAP
--- TODO: Test Neotest
+-- TODO: Neotest
+-- TODO: auto-session
+-- TODO: Git signs bindings for reset hunk, toggle blame, diff
