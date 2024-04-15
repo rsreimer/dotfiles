@@ -79,7 +79,7 @@ return {
 
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
 					bmap("n", "K", vim.lsp.buf.hover)
-					bmap("n", "<C-k>", vim.lsp.buf.signature_help)
+					bmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
 
 					bmap("n", "gd", vim.lsp.buf.definition)
 					bmap("n", "gD", vim.lsp.buf.type_definition)

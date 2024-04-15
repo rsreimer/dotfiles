@@ -18,3 +18,6 @@ alias elc="cd ~/.config/lazyvim && el"
 # Neovim
 alias e="kitty @ set-tab-title \"\$(basename \$(pwd))\" && nvim ."
 alias ec="cd ~/.config/nvim && e"
+
+# Angular Playground
+alias ngp="cd ~/projects/angular-playground && git checkout main && git reset --hard HEAD && e"

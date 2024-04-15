@@ -18,8 +18,6 @@ return {
 			html = { "prettierd" },
 			json = { "prettierd" },
 
-			markdown = { "prettierd" },
-
 			yaml = { "prettierd" },
 		},
 		format_on_save = {
