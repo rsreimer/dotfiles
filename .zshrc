@@ -16,8 +16,8 @@ alias el="kitty @ set-tab-title \"\$(basename \$(pwd))\" && NVIM_APPNAME=lazyvim
 alias elc="cd ~/.config/lazyvim && el"
 
 # Neovim
-alias e="kitty @ set-tab-title \"\$(basename \$(pwd))\" && nvim ."
+alias e="kitty @ set-tab-title \"\$(basename \$(pwd))\" && nvim"
 alias ec="cd ~/.config/nvim && e"
 
 # Angular Playground
-alias ngp="cd ~/projects/angular-playground && git checkout main && git reset --hard HEAD && e"
+alias ngp="cd ~/projects/angular-playground && git checkout main && git reset --hard HEAD && nvim ./src/app/app.component.ts"

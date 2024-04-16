@@ -1,11 +1,3 @@
--- Disable autoformat for markdown files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "md" },
-	callback = function()
-		vim.b.autoformat = false
-	end,
-})
-
 -- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ "FocusGained" }, {
 	callback = function()
@@ -20,4 +12,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank()
 	end,
+})
+
+-- Eslint fix on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = { "*.tsx", "*.ts", "*.jsx", "*.js" },
+	command = "silent! EslintFixAll",
 })

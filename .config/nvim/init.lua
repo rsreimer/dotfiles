@@ -8,6 +8,7 @@ require("config.autocmds")
 require("config.keymaps")
 
 -- TODO: DAP
--- TODO: Neotest
--- TODO: auto-session
+-- TODO: Neotest / jest.nvim?
+-- TODO: Harpoon?
+-- TODO: Typescript tools? https://github.com/pmizio/typescript-tools.nvim
 -- TODO: Git signs bindings for reset hunk, toggle blame, diff
