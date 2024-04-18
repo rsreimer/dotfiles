@@ -1,3 +1,4 @@
+// https://github.com/catppuccin/gitui/blob/main/theme/mocha.ron
 (
     selected_tab: Some(Reset),
     command_fg: Some(Rgb(205, 214, 244)),
