@@ -7,6 +7,7 @@
 // Note:
 // find `KeysList` type in src/keys/key_list.rs for all possible keys.
 // every key not overwritten via the config file will use the default specified there
+// https://github.com/extrawurst/gitui/blob/master/src/keys/key_list.rs#L132-L217
 (
     open_help: Some(( code: F(1), modifiers: "")),
 
