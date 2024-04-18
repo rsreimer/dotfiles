@@ -3,6 +3,8 @@
 /.config/*
 !/.config/lazyvim
 !/.config/nvim
+!/.config/zed/settings.json
+!/.config/gitui
 !/.config/kitty
 !/.ideavimrc
 !/.zprofile
