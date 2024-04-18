@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 zstyle ':omz:plugins:nvm' lazy yes
-zstyle ':omz:plugins:nvm' lazy-cmd eslint prettier typescript pnpx
+zstyle ':omz:plugins:nvm' lazy-cmd pnpx
 
 plugins=(nvm git vi-mode macos)
 
