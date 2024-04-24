@@ -12,6 +12,7 @@ return {
 			["<leader>s"] = { name = "+search" },
 			["<leader>u"] = { name = "+ui" },
 			["<leader>x"] = { name = "+diagnostics/quickfix" },
+			["<leader>h"] = { name = "+harpoon" },
 		})
 	end,
 }
