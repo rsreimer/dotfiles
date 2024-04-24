@@ -91,7 +91,21 @@ return {
 		config = function()
 			local telescope = require("telescope")
 
-			telescope.setup()
+			telescope.setup({
+				pickers = {
+					buffers = {
+						sort_mru = true,
+						mappings = {
+							n = {
+								["dd"] = "delete_buffer",
+							},
+							i = {
+								["<c-d>"] = "delete_buffer",
+							},
+						},
+					},
+				},
+			})
 			telescope.load_extension("fzf")
 			telescope.load_extension("magnet")
 		end,

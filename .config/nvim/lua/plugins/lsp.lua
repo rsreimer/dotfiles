@@ -1,4 +1,5 @@
 return {
+	{ "folke/neodev.nvim", opts = {} },
 	{ "neovim/nvim-lspconfig" },
 	{
 		"williamboman/mason.nvim",
@@ -47,26 +48,6 @@ return {
 					require("lspconfig").angularls.setup({
 						capabilities = cmp,
 						root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json"),
-					})
-				end,
-				["tsserver"] = function()
-					require("lspconfig").tsserver.setup({
-						capabilities = cmp,
-						keys = {
-							{
-								"<leader>cu",
-								function()
-									vim.lsp.buf.code_action({
-										apply = true,
-										context = {
-											only = { "source.removeUnused.ts" },
-											diagnostics = {},
-										},
-									})
-								end,
-								desc = "Remove Unused Imports",
-							},
-						},
 					})
 				end,
 			})
