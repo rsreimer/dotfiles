@@ -10,7 +10,7 @@ return {
     -- stylua: ignore start
 		vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, {desc = "Add file"})
 		vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, {desc = "Harpoon list"})
-		vim.keymap.set("n", "<leader>hd", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, {desc = "Remove current buffer"})
+		vim.keymap.set("n", "<leader>hd", function() harpoon:list():remove() end, {desc = "Remove current buffer"})
 
 		vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end, {desc = "which_key_ignore"})
 		vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end, {desc = "which_key_ignore"})

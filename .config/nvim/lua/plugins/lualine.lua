@@ -17,7 +17,8 @@ return {
 			lualine_z = { "location" },
 		},
 		tabline = {
-			lualine_c = {
+			lualine_c = { "filename" },
+			lualine_x = {
 				function()
 					local harpoon = require("harpoon")
 
@@ -32,19 +33,20 @@ return {
 
 					for index = 1, harpoon:list():length() do
 						local harpoon_file_path = harpoon:list():get(index).value
+
 						local file_name = harpoon_file_path == "" and "(empty)"
 							or vim.fn.fnamemodify(harpoon_file_path, ":t")
 
 						if current_file_path == harpoon_file_path then
 							contents[index] =
-								string.format("%%#HarpoonNumberActive# %s. %%#HarpoonActive#%s ", index, file_name)
+								string.format("%%#HarpoonNumberActive#%s %%#HarpoonActive#%s", index, file_name)
 						else
 							contents[index] =
-								string.format("%%#HarpoonNumberInactive# %s. %%#HarpoonInactive#%s ", index, file_name)
+								string.format("%%#HarpoonNumberInactive#%s %%#HarpoonInactive#%s", index, file_name)
 						end
 					end
 
-					return table.concat(contents)
+					return table.concat(contents, "  ")
 				end,
 			},
 		},
