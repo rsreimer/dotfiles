@@ -1,6 +1,6 @@
 return {
 	{ "folke/neodev.nvim", opts = {} },
-	{ "neovim/nvim-lspconfig" },
+	{ "neovim/nvim-lspconfig", dependencies = { "folke/neodev.nvim" } },
 	{
 		"williamboman/mason.nvim",
 		config = function()

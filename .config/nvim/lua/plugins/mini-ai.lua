@@ -4,7 +4,7 @@ return {
 		n_lines = 500,
 	},
 	dependencies = {
-		"whick-key/which-key.nvim",
+		"which-key/which-key.nvim",
 		config = function()
 			-- register all text objects with which-key
 			local desc = {
