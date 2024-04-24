@@ -17,7 +17,6 @@ return {
 			lualine_z = { "location" },
 		},
 		tabline = {
-			lualine_c = { "filename" },
 			lualine_x = {
 				function()
 					local harpoon = require("harpoon")
