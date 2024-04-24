@@ -23,7 +23,6 @@ return {
 
 		vim.keymap.set("n", "H", function() harpoon:list():prev() end)
 		vim.keymap.set("n", "L", function() harpoon:list():next() end)
-
 		-- stylua: ignore end
 	end,
 }
