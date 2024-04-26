@@ -47,13 +47,23 @@ local function set_unique_label(items)
 	end
 end
 
-function M.init()
+function M.setup()
 	vim.cmd("highlight! HarpoonInactive guibg=NONE guifg=#63698c")
 	vim.cmd("highlight! HarpoonActive guibg=NONE guifg=white")
 	vim.cmd("highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7")
 	vim.cmd("highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7")
 
 	M.update()
+
+	require("harpoon.extensions").extensions:add_listener({
+		ADD = M.update,
+		REMOVE = M.update,
+		REPLACE = M.update,
+		REORDER = M.update,
+		UI_CREATE = M.update,
+		POSITION_UPDATED = M.update,
+		LIST_CHANGE = M.update,
+	})
 end
 
 function M.update()
