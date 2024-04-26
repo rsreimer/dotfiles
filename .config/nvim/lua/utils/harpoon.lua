@@ -61,14 +61,13 @@ function M.lualine_items()
 		local harpoonItem = harpoon:list():get(index)
 
 		if harpoonItem ~= nil and harpoonItem.value ~= "" then
-			local is_dir = string.starts_with(harpoonItem.value, "oil://")
-
-			local path = is_dir and string.sub(harpoonItem.value, 1 + string.len("oil://" .. vim.fn.getcwd() .. "/"))
+			local path = string.starts_with(harpoonItem.value, "oil://")
+					and string.sub(harpoonItem.value, 1 + string.len("oil://" .. vim.fn.getcwd() .. "/"))
 				or harpoonItem.value
 
 			local item = {
 				index = index,
-				is_dir = is_dir,
+				value = harpoonItem.value,
 				path = path,
 				sections = string.split(path, "/"),
 			}
@@ -89,17 +88,13 @@ function M.lualine_items()
 				set_unique_label(items_with_same_name)
 			end
 		end
-
-		if item.is_dir == true then
-			item.label = item.label .. "/"
-		end
 	end
 
 	local contents = {}
 	local current_file_path = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":.")
 
 	for _, item in pairs(items) do
-		local is_active = current_file_path == item.path
+		local is_active = current_file_path == item.value
 
 		local format = is_active and "%%#HarpoonNumberActive#%s %%#HarpoonActive#%s"
 			or "%%#HarpoonNumberInactive#%s %%#HarpoonInactive#%s"

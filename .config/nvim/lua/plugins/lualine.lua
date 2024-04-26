@@ -19,9 +19,7 @@ return {
 		tabline = {
 			lualine_x = {
 				function()
-					return xpcall(require("utils.harpoon").lualine_items, function(err)
-						vim.print(err)
-					end)
+					return require("utils.harpoon").lualine_items()
 				end,
 			},
 		},
