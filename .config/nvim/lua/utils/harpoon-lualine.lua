@@ -1,7 +1,9 @@
 require("utils.string")
 require("utils.table")
 
-local M = {}
+local M = {
+	items = {},
+}
 
 local function set_unique_label(items)
 	local tree = {}

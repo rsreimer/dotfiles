@@ -4,11 +4,10 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local harpoon = require("harpoon")
-		local harpoon_lualine = require("components.harpoon-lualine")
+		local harpoon_lualine = require("utils.harpoon-lualine")
 
 		harpoon:setup({})
 		harpoon_lualine.setup()
-
 
     -- stylua: ignore start
 		vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, {desc = "Add file"})
