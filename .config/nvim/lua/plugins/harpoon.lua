@@ -7,6 +7,19 @@ return {
 
 		harpoon:setup({})
 
+		local lualine_harpoon = require("utils.lualine-harpoon")
+		lualine_harpoon.init()
+
+		require("harpoon.extensions").extensions:add_listener({
+			ADD = lualine_harpoon.update,
+			REMOVE = lualine_harpoon.update,
+			REPLACE = lualine_harpoon.update,
+			REORDER = lualine_harpoon.update,
+			UI_CREATE = lualine_harpoon.update,
+			POSITION_UPDATED = lualine_harpoon.update,
+			LIST_CHANGE = lualine_harpoon.update,
+		})
+
     -- stylua: ignore start
 		vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, {desc = "Add file"})
 		vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, {desc = "Harpoon list"})

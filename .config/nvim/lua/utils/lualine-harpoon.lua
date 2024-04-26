@@ -53,13 +53,13 @@ function M.init()
 	vim.cmd("highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7")
 	vim.cmd("highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7")
 
-	M.items = {}
+	M.update()
 end
 
-function M.update_items()
+function M.update()
 	local harpoon = require("harpoon")
 
-	M.items = {}
+	local items = {}
 
 	for index = 1, harpoon:list():length() do
 		local harpoonItem = harpoon:list():get(index)
@@ -92,20 +92,21 @@ function M.update_items()
 				set_unique_label(items_with_same_name)
 			end
 		end
+
+		item.label_active = string.format("%%#HarpoonNumberActive#%s %%#HarpoonActive#%s", item.index, item.label)
+		item.label_inactive = string.format("%%#HarpoonNumberInactive#%s %%#HarpoonInactive#%s", item.index, item.label)
 	end
+
+	M.items = items
 end
 
-function M.get_lualine_items()
+function M.get_lualine()
 	local contents = {}
 	local current_file_path = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":.")
 
-	for _, item in pairs(items) do
-		local is_active = current_file_path == item.value
-
-		local format = is_active and "%%#HarpoonNumberActive#%s %%#HarpoonActive#%s"
-			or "%%#HarpoonNumberInactive#%s %%#HarpoonInactive#%s"
-
-		table.insert(contents, string.format(format, item.index, item.label))
+	for _, item in pairs(M.items) do
+		local label = current_file_path == item.value and item.label_active or item.label_inactive
+		table.insert(contents, label)
 	end
 
 	return table.concat(contents, "  ")

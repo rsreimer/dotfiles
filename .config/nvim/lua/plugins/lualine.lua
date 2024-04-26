@@ -19,7 +19,7 @@ return {
 		tabline = {
 			lualine_x = {
 				function()
-					return require("utils.harpoon").get_lualine_items()
+					return require("utils.lualine-harpoon").get_lualine()
 				end,
 			},
 		},
