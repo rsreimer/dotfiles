@@ -57,7 +57,7 @@ function M.setup()
 
 	M.update()
 
-	require("harpoon.extensions").extensions:add_listener({
+	require("harpoon"):extend({
 		ADD = M.update,
 		REMOVE = M.update,
 		REPLACE = M.update,
