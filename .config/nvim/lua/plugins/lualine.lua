@@ -19,33 +19,9 @@ return {
 		tabline = {
 			lualine_x = {
 				function()
-					local harpoon = require("harpoon")
-
-					vim.cmd("highlight! HarpoonInactive guibg=NONE guifg=#63698c")
-					vim.cmd("highlight! HarpoonActive guibg=NONE guifg=white")
-					vim.cmd("highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7")
-					vim.cmd("highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7")
-
-					local contents = {}
-
-					local current_file_path = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":.")
-
-					for index = 1, harpoon:list():length() do
-						local harpoon_file_path = harpoon:list():get(index).value
-
-						local file_name = harpoon_file_path == "" and "(empty)"
-							or vim.fn.fnamemodify(harpoon_file_path, ":t")
-
-						if current_file_path == harpoon_file_path then
-							contents[index] =
-								string.format("%%#HarpoonNumberActive#%s %%#HarpoonActive#%s", index, file_name)
-						else
-							contents[index] =
-								string.format("%%#HarpoonNumberInactive#%s %%#HarpoonInactive#%s", index, file_name)
-						end
-					end
-
-					return table.concat(contents, "  ")
+					return xpcall(require("utils.harpoon").lualine_items, function(err)
+						vim.print(err)
+					end)
 				end,
 			},
 		},

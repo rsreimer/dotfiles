@@ -1,6 +1,7 @@
 return {
 	{
 		"zbirenbaum/copilot.lua",
+		enabled = false,
 		cmd = "Copilot",
 		build = ":Copilot auth",
 		opts = {
@@ -8,5 +9,5 @@ return {
 			panel = { enabled = false },
 		},
 	},
-	{ "zbirenbaum/copilot-cmp", dependencies = "copilot.lua", opts = {} },
+	{ "zbirenbaum/copilot-cmp", enabled = false, dependencies = "copilot.lua", opts = {} },
 }
