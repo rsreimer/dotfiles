@@ -47,15 +47,19 @@ local function set_unique_label(items)
 	end
 end
 
-function M.lualine_items()
-	local harpoon = require("harpoon")
-
+function M.init()
 	vim.cmd("highlight! HarpoonInactive guibg=NONE guifg=#63698c")
 	vim.cmd("highlight! HarpoonActive guibg=NONE guifg=white")
 	vim.cmd("highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7")
 	vim.cmd("highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7")
 
-	local items = {}
+	M.items = {}
+end
+
+function M.update_items()
+	local harpoon = require("harpoon")
+
+	M.items = {}
 
 	for index = 1, harpoon:list():length() do
 		local harpoonItem = harpoon:list():get(index)
@@ -89,7 +93,9 @@ function M.lualine_items()
 			end
 		end
 	end
+end
 
+function M.get_lualine_items()
 	local contents = {}
 	local current_file_path = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":.")
 
