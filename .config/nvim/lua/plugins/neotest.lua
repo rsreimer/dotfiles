@@ -32,6 +32,19 @@ return {
 				desc = "Run File",
 			},
 			{
+				"<leader>tf",
+				function()
+					local file = vim.fn.expand("%")
+
+					if file:match(".spec.ts$") then
+						vim.cmd("edit " .. file:gsub(".spec.ts$", ".ts"))
+					else
+						vim.cmd("edit " .. file:gsub(".ts$", ".spec.ts"))
+					end
+				end,
+				desc = "Switch to/from spec file",
+			},
+			{
 				"<leader>tT",
 				function()
 					require("neotest").run.run(vim.loop.cwd())
