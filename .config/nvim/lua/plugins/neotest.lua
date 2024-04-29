@@ -2,7 +2,11 @@ return {
 	{
 		"nvim-neotest/neotest",
 		dependencies = {
-			"haydenmeade/neotest-jest",
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-neotest/neotest-jest",
 		},
 		config = function()
 			require("neotest").setup({
@@ -15,8 +19,16 @@ return {
 			{
 				"<leader>tt",
 				function()
-					require("neotest").run.run(vim.fn.expand("%"))
+					local neotest = require("neotest")
+
+					local file = vim.fn.expand("%:p"):gsub(".spec.ts$", ".ts"):gsub(".ts$", ".spec.ts")
+
+					neotest.run.run(file)
+
+					neotest.summary.open()
+					neotest.summary:expand(file, true)
 				end,
+
 				desc = "Run File",
 			},
 			{
