@@ -23,9 +23,6 @@ return {
 		vim.keymap.set("n", "<leader>7", function() harpoon:list():select(7) end, {desc = "which_key_ignore"})
 		vim.keymap.set("n", "<leader>8", function() harpoon:list():select(8) end, {desc = "which_key_ignore"})
 		vim.keymap.set("n", "<leader>9", function() harpoon:list():select(9) end, {desc = "which_key_ignore"})
-
-		vim.keymap.set("n", "H", function() harpoon:list():prev() end)
-		vim.keymap.set("n", "L", function() harpoon:list():next() end)
 		-- stylua: ignore end
 	end,
 }

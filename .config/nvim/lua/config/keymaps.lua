@@ -21,6 +21,12 @@ map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent =
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
+-- Jump between windows
+map("n", "H", "<C-w>h", { desc = "Left window" })
+map("n", "L", "<C-w>l", { desc = "Right window" })
+map("n", "J", "<C-w>j", { desc = "Down window" })
+map("n", "K", "<C-w>k", { desc = "Up window" })
+
 -- Resize window using <ctrl> arrow keys
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
