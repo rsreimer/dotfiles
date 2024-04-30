@@ -1,0 +1,82 @@
+{
+  "Angular Component": {
+    "prefix": "a-component",
+    "description": "Angular component",
+    "body": [
+      "import { Component, OnInit } from '@angular/core';",
+      "",
+      "@Component({",
+      "\tstandalone: true,",
+      "\timports: [],",
+      "\tselector: '${1:selector-name}',",
+      "\ttemplateUrl: '${2:name}.component.html'",
+      "})",
+      "",
+      "export class ${3:Name}Component implements OnInit {",
+      "\tconstructor() { }",
+      "",
+      "\tngOnInit() { }$0",
+      "}"
+    ]
+  },
+  "Angular Pipe": {
+    "prefix": "a-pipe",
+    "description": "Angular pipe",
+    "body": [
+      "import { Pipe, PipeTransform } from '@angular/core';",
+      "",
+      "@Pipe({",
+      "\tname: '${1:selector-name}'",
+      "})",
+      "",
+      "export class ${2:Name}Pipe implements PipeTransform {",
+      "\ttransform(value: any, ...args: any[]): any {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Angular Service": {
+    "prefix": "a-service",
+    "description": "Angular Service with Injectable ProvidedIn Root",
+    "body": [
+      "import { Injectable } from '@angular/core';",
+      "",
+      "@Injectable({providedIn: ${1:'root'}})",
+      "export class ${2:ServiceName}Service {",
+      "\tconstructor() { }",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Angular Module": {
+    "prefix": "a-module",
+    "description": "Angular Module",
+    "body": [
+      "import { NgModule } from '@angular/core';",
+      "",
+      "import { ${1:Name}Component } from './${2:name}.component';",
+      "",
+      "@NgModule({",
+      "\timports: [],",
+      "\texports: [],",
+      "\tdeclarations: [${1:Name}Component],",
+      "\tproviders: [],",
+      "})",
+      "export class ${1:Name}Module { }",
+      "$0"
+    ]
+  },
+  "Angular Directive": {
+    "prefix": "a-directive",
+    "description": "Angular directive",
+    "body": [
+      "import { Directive } from '@angular/core';",
+      "",
+      "@Directive({ selector: '[${1:selector-name}]' })",
+      "export class ${2:Name}Directive {",
+      "\tconstructor() { }",
+      "}"
+    ]
+  }
+}
