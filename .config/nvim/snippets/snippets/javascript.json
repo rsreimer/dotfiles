@@ -32,8 +32,12 @@
     "body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}"
   },
   "arrow function": {
-    "prefix": "af",
-    "body": "(${1:arguments}) => {\n\t${0}\n}"
+    "prefix": "fn",
+    "body": "(${1}) => ${0}"
+  },
+  "arrow function with body": {
+    "prefix": "fnb",
+    "body": "(${1}) => {\n\t${0}\n}"
   },
   "console.log": {
     "prefix": "log",
@@ -46,18 +50,6 @@
   "method": {
     "prefix": "method",
     "body": "${1:method} (${2:arguments}) {\n\t${0}\n}"
-  },
-  "For-In Loop": {
-    "prefix": "forin",
-    "body": [
-      "for (const ${1:key} in ${2:object}) {",
-      "\tif (${2:object}.hasOwnProperty(${1:key})) {",
-      "\t\tconst ${3:element} = ${2:object}[${1:key}];",
-      "\t\t$0",
-      "\t}",
-      "}"
-    ],
-    "description": "For-In Loop"
   },
   "For-Of Loop": {
     "prefix": "forof",
