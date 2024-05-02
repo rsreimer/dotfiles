@@ -1,10 +1,9 @@
 /*
 !/.config
 /.config/*
-!/.config/lazyvim
 !/.config/nvim
+!/.config/charybdis
 !/.config/zed/settings.json
-!/.config/gitui
 !/.config/kitty
 !/.ideavimrc
 !/.zprofile
