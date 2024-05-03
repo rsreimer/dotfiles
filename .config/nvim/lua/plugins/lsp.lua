@@ -59,14 +59,14 @@ return {
 					end
 
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
-					bmap("n", "K", vim.lsp.buf.hover)
-					bmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
+					bmap("n", "K", vim.lsp.buf.hover, "Hover")
+					bmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Signature Help")
 
-					bmap("n", "gd", vim.lsp.buf.definition)
-					bmap("n", "gD", vim.lsp.buf.type_definition)
-					bmap("n", "gi", vim.lsp.buf.implementation)
-					bmap("n", "gr", vim.lsp.buf.references)
-					bmap("n", "gl", vim.diagnostic.open_float)
+					bmap("n", "gd", vim.lsp.buf.definition, "Definition")
+					bmap("n", "gD", vim.lsp.buf.type_definition, "Type Definition")
+					bmap("n", "gi", vim.lsp.buf.implementation, "Implementation")
+					bmap("n", "gr", vim.lsp.buf.references, "References")
+					bmap("n", "gl", vim.diagnostic.open_float, "Open Float")
 
 					bmap("n", "<leader>cr", vim.lsp.buf.rename, "Rename")
 					bmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code Actions")
@@ -87,8 +87,8 @@ return {
 						})
 					end, "Removed Unused Imports")
 
-					bmap("n", "[d", vim.diagnostic.goto_prev)
-					bmap("n", "]d", vim.diagnostic.goto_next)
+					bmap("n", "[d", vim.diagnostic.goto_prev, "Prev Diagnostic")
+					bmap("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
 				end,
 			})
 		end,
