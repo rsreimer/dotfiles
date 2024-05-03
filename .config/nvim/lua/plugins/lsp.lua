@@ -82,7 +82,7 @@ return {
 						vim.lsp.buf.code_action({
 							apply = true,
 							context = {
-								only = { "source.addMissingImports.ts" },
+								only = { "source.removeUnusedImports.ts" },
 							},
 						})
 					end, "Removed Unused Imports")
