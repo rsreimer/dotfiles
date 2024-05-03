@@ -1,6 +1,7 @@
 return {
 	"folke/trouble.nvim",
 	branch = "dev", -- Use v3 beta
+	enabled = false,
 	keys = {
 		{
 			"<leader>xx",
