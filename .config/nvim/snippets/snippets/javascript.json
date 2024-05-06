@@ -5,7 +5,7 @@
   },
   "it": {
     "prefix": "it",
-    "body": "it('${1:description}', async () => {\n\t${0}\n})"
+    "body": "it('should ${1:description}', async () => {\n\t${0}\n})"
   },
   "beforeAll": {
     "prefix": "ba",
