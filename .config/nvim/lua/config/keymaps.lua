@@ -1,10 +1,7 @@
 local map = vim.keymap.set
 
 -- LSP
-map("n", "<leader>cz", function()
-	vim.lsp.stop_client(vim.lsp.get_active_clients())
-	vim.cmd("edit")
-end, { desc = "Restart LSPs" })
+map("n", "<leader>cz", "<cmd>LspRestart<cr>", { desc = "Restart LSPs" })
 
 -- Git
 map("n", "<leader>ghf", "<cmd>Telescope git_bcommits<cr>", { desc = "File history" })
