@@ -15,6 +15,7 @@ return {
 					"tsserver",
 					"lua_ls",
 					"yamlls",
+					"custom_elements_ls",
 
 					-- Formatters
 					"prettierd",
