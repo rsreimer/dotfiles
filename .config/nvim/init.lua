@@ -7,7 +7,6 @@ require("utils.lazy").setup()
 require("config.autocmds")
 require("config.keymaps")
 
--- TODO: Text objects
 -- TODO: DAP
 -- TODO: setup trouble?
 -- TODO: Typescript tools? https://github.com/pmizio/typescript-tools.nvim
