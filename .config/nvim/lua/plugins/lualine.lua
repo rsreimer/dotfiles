@@ -17,7 +17,7 @@ return {
 			lualine_z = { "location" },
 		},
 		tabline = {
-			lualine_x = {
+			lualine_c = {
 				function()
 					return require("utils.harpoon-lualine").get_lualine()
 				end,
