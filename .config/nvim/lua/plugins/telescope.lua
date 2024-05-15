@@ -11,12 +11,7 @@ return {
 				buffers = {
 					sort_mru = true,
 					mappings = {
-						n = {
-							["dd"] = "delete_buffer",
-						},
-						i = {
-							["<c-d>"] = "delete_buffer",
-						},
+						n = { ["dd"] = "delete_buffer" },
 					},
 				},
 			},
