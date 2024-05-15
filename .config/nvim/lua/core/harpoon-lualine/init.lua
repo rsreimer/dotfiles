@@ -1,5 +1,5 @@
-require("utils.string")
-require("utils.table")
+require("core.utils.string")
+require("core.utils.table")
 
 local M = {
 	items = {},
@@ -70,6 +70,7 @@ end
 
 function M.update()
 	local harpoon = require("harpoon")
+	local lualine = require("lualine")
 
 	local items = {}
 
@@ -110,6 +111,8 @@ function M.update()
 	end
 
 	M.items = items
+
+	lualine.refresh()
 end
 
 function M.get_lualine()

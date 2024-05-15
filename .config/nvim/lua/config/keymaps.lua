@@ -1,5 +1,8 @@
 local map = vim.keymap.set
 
+-- LSP
+map("n", "<leader>cz", "<cmd>LspRestart<cr>", { desc = "Restart LSPs" })
+
 -- Git
 map("n", "<leader>ghf", "<cmd>Telescope git_bcommits<cr>", { desc = "File history" })
 map("v", "<leader>ghf", "<cmd>Telescope git_bcommits_range<cr>", { desc = "Selection history" })
@@ -88,16 +91,6 @@ map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
 map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
 map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
-
--- stylua: ignore start
-
--- toggle options
-map("n", "<leader>uf", function() Util.format.toggle(true) end, { desc = "Toggle auto format (buffer)" })
-map("n", "<leader>ud", function() Util.toggle.diagnostics() end, { desc = "Toggle Diagnostics" })
-if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
-  map( "n", "<leader>uh", function() Util.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })
-end
-map("n", "<leader>uT", function() if vim.b.ts_highlight then vim.treesitter.stop() else vim.treesitter.start() end end, { desc = "Toggle Treesitter Highlight" })
 
 -- highlights under cursor
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })

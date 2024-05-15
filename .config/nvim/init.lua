@@ -1,13 +1,15 @@
-require("utils.lazy").install()
+require("core.lazy").install()
 
 require("config.options")
 
-require("utils.lazy").setup()
+require("core.lazy").setup()
 
 require("config.autocmds")
 require("config.keymaps")
 
+-- TODO: Git merge
 -- TODO: DAP
 -- TODO: setup trouble?
 -- TODO: Typescript tools? https://github.com/pmizio/typescript-tools.nvim
 -- TODO: Git signs bindings for toggle blame, diff
+-- TODO: Fugitive

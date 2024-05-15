@@ -15,6 +15,7 @@ return {
 					"tsserver",
 					"lua_ls",
 					"yamlls",
+					"custom_elements_ls",
 
 					-- Formatters
 					"prettierd",
@@ -54,25 +55,41 @@ return {
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(event)
-					local bmap = function(mode, lhs, rhs)
-						vim.keymap.set(mode, lhs, rhs, { buffer = event.buf })
+					local bmap = function(mode, lhs, rhs, desc)
+						vim.keymap.set(mode, lhs, rhs, { buffer = event.buf, desc = desc })
 					end
 
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
-					bmap("n", "K", vim.lsp.buf.hover)
-					bmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help)
+					bmap("n", "K", vim.lsp.buf.hover, "Hover")
+					bmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Signature Help")
 
-					bmap("n", "gd", vim.lsp.buf.definition)
-					bmap("n", "gD", vim.lsp.buf.type_definition)
-					bmap("n", "gi", vim.lsp.buf.implementation)
-					bmap("n", "gr", vim.lsp.buf.references)
+					bmap("n", "gd", vim.lsp.buf.definition, "Definition")
+					bmap("n", "gD", vim.lsp.buf.type_definition, "Type Definition")
+					bmap("n", "gi", vim.lsp.buf.implementation, "Implementation")
+					bmap("n", "gr", vim.lsp.buf.references, "References")
+					bmap("n", "gl", vim.diagnostic.open_float, "Open Float")
 
-					bmap("n", "<leader>cr", vim.lsp.buf.rename)
-					bmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
+					bmap("n", "<leader>cr", vim.lsp.buf.rename, "Rename")
+					bmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code Actions")
+					bmap("n", "<leader>ci", function()
+						vim.lsp.buf.code_action({
+							apply = true,
+							context = {
+								only = { "source.addMissingImports.ts" },
+							},
+						})
+					end, "Add Missing Imports")
+					bmap("n", "<leader>cu", function()
+						vim.lsp.buf.code_action({
+							apply = true,
+							context = {
+								only = { "source.removeUnusedImports.ts" },
+							},
+						})
+					end, "Removed Unused Imports")
 
-					bmap("n", "gl", vim.diagnostic.open_float)
-					bmap("n", "[d", vim.diagnostic.goto_prev)
-					bmap("n", "]d", vim.diagnostic.goto_next)
+					bmap("n", "[d", vim.diagnostic.goto_prev, "Prev Diagnostic")
+					bmap("n", "]d", vim.diagnostic.goto_next, "Next Diagnostic")
 				end,
 			})
 		end,

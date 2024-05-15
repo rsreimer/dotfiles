@@ -1,8 +1,24 @@
 return {
 	"echasnovski/mini.ai",
-	opts = {
-		n_lines = 500,
-	},
+	opts = function()
+		local ai = require("mini.ai")
+
+		return {
+			n_lines = 500,
+			custom_textobjects = {
+				f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+				g = function()
+					return {
+						from = { line = 1, col = 1 },
+						to = {
+							line = vim.fn.line("$"),
+							col = math.max(vim.fn.getline("$"):len(), 1),
+						},
+					}
+				end,
+			},
+		}
+	end,
 	dependencies = {
 		"which-key/which-key.nvim",
 		config = function()
