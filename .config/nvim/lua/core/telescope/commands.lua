@@ -11,8 +11,8 @@ M.find_directory_command = {
 	"--exclude=.idea/",
 	"--exclude=node_modules/",
 	"--exclude=dist/",
-	"--exclude=.nx/cache/",
-	"--exclude=.angular/cache/",
+	"--exclude=.nx/",
+	"--exclude=.angular/",
 }
 
 M.find_command = {
@@ -25,8 +25,8 @@ M.find_command = {
 	"--glob=!.idea/",
 	"--glob=!node_modules/",
 	"--glob=!dist/",
-	"--glob=!.nx/cache/",
-	"--glob=!.angular/cache/",
+	"--glob=!.nx/",
+	"--glob=!.angular/",
 }
 
 M.grep_command = {
@@ -43,8 +43,8 @@ M.grep_command = {
 	"--glob=!.idea/",
 	"--glob=!node_modules/",
 	"--glob=!dist/",
-	"--glob=!.nx/cache/",
-	"--glob=!.angular/cache/",
+	"--glob=!.nx/",
+	"--glob=!.angular/",
 }
 
 return M
