@@ -1,5 +1,5 @@
-require("utils.string")
-require("utils.table")
+require("core.utils.string")
+require("core.utils.table")
 
 local M = {
 	items = {},

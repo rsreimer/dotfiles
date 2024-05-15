@@ -1,8 +1,8 @@
-require("utils.lazy").install()
+require("core.lazy").install()
 
 require("config.options")
 
-require("utils.lazy").setup()
+require("core.lazy").setup()
 
 require("config.autocmds")
 require("config.keymaps")
