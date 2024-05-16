@@ -1,19 +1,27 @@
 {
   "describe": {
-    "prefix": "desc",
+    "prefix": "desc-snip",
     "body": "describe('${1:description}', () => {\n\t${0}\n})"
   },
   "it": {
-    "prefix": "it",
+    "prefix": "it-snip",
     "body": "it('should ${1:description}', async () => {\n\t${0}\n})"
   },
   "beforeAll": {
-    "prefix": "ba",
+    "prefix": "beforeAll-snip",
     "body": "beforeAll(async () => {\n\t${0}\n})"
   },
   "beforeEach": {
-    "prefix": "bfe",
+    "prefix": "beforeEach-snip",
     "body": "beforeEach(async () => {\n\t${0}\n})"
+  },
+  "afterAll": {
+    "prefix": "afterAll-snip",
+    "body": "afterAll(async () => {\n\t${0}\n})"
+  },
+  "afterEach": {
+    "prefix": "afterEach-snip",
+    "body": "afterEach(async () => {\n\t${0}\n})"
   },
   "export all": {
     "prefix": "export-all",

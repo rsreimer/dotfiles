@@ -1,6 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-  lazy = false,
+	lazy = false,
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
@@ -44,7 +44,7 @@ return {
 					vim.print("Disabled autoformat for buffer")
 				end
 			end,
-      desc = "Toggle auto format"
+			desc = "Toggle auto format",
 		},
 	},
 }
