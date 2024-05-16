@@ -1,13 +1,13 @@
 function string:split(split)
-	local sections = {}
+  local sections = {}
 
-	for str in string.gmatch(self, "([^" .. split .. "]+)") do
-		table.insert(sections, str)
-	end
+  for str in string.gmatch(self, "([^" .. split .. "]+)") do
+    table.insert(sections, str)
+  end
 
-	return sections
+  return sections
 end
 
 function string:starts_with(start)
-	return self:sub(1, #start) == start
+  return self:sub(1, #start) == start
 end
