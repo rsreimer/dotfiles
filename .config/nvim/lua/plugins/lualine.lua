@@ -13,7 +13,12 @@ return {
           return require("codeowners").get_buf_owner()
         end,
       },
-      lualine_y = { "filetype" },
+      lualine_y = {
+        function()
+          return require("core.recording-lualine").show_macro_recording()
+        end,
+        "filetype",
+      },
       lualine_z = { "location" },
     },
     tabline = {
