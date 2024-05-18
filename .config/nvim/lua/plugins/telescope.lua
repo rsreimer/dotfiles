@@ -21,6 +21,7 @@ return {
 
       telescope.setup(opts)
       telescope.load_extension("fzf")
+      telescope.load_extension("noice")
     end,
     keys = function()
       local core_finders = require("core.telescope.finders")

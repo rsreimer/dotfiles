@@ -12,13 +12,17 @@ return {
         function()
           return require("codeowners").get_buf_owner()
         end,
+        {
+          function()
+            return require("noice").api.status.mode.get()
+          end,
+          cond = function()
+            return package.loaded["noice"] and require("noice").api.status.mode.has()
+          end,
+          color = { fg = "#ff9e64" },
+        },
       },
-      lualine_y = {
-        function()
-          return require("core.recording-lualine").show_macro_recording()
-        end,
-        "filetype",
-      },
+      lualine_y = { "filetype" },
       lualine_z = { "location" },
     },
     tabline = {
