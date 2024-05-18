@@ -1,0 +1,22 @@
+<div id="canvas"></div>
+
+<script>
+  const keymaps = ["default", "custom", "miryoku-like"];
+  const selectedKeymap = new URL(document.location).searchParams.get("keymap");
+
+  async function main() {
+    const canvasElement = window.canvas;
+
+    const keymap = await fetch(`./keymaps/${selectedKeymap}.keymap.json`).then(
+      (r) => r.json(),
+    );
+
+    const layout = await fetch(`./info.json`)
+      .then((r) => r.json())
+      .then((r) => r.layouts.LAYOUT.layout);
+
+    console.log(keymap, layout);
+  }
+
+  main();
+</script>
