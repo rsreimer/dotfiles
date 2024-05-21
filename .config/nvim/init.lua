@@ -11,5 +11,3 @@ require("config.keymaps")
 -- TODO: DAP
 -- TODO: setup trouble?
 -- TODO: Typescript tools? https://github.com/pmizio/typescript-tools.nvim
--- TODO: Git signs bindings for toggle blame, diff
--- TODO: Fugitive
