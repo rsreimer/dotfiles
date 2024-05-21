@@ -9,4 +9,3 @@ require("config.keymaps")
 
 -- TODO: DAP
 -- TODO: Typescript tools? https://github.com/pmizio/typescript-tools.nvim
--- TODO: setup trouble?
