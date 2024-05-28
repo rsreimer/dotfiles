@@ -1,5 +1,15 @@
 <style>
+  body {
+    background-color: #333;
+  }
+
   #canvas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .layer {
     display: inline-grid;
 
     grid-template-columns: repeat(17, 1fr);
@@ -8,20 +18,24 @@
   }
 
   .cell:not(.empty) {
+    text-align: center;
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.125rem 0.375rem;
-    border-radius: 0.1875rem;
+    padding: 3px;
+    border-radius: 3px;
     font-family: monospace;
     font-weight: 400;
-    background-color: #eee;
-    background-image: linear-gradient(to bottom, #ddd, #eee, #fff);
+    color: #ddd;
+    background-image: linear-gradient(to bottom, #222, #333, #444);
     box-shadow:
-      0 -0.0625rem 0 0 #fff,
-      0 0.0625rem 0 0.1875rem #aaa;
+      0 -0.0625rem 0 0 #444,
+      0 0.0625rem 0 0.1875rem #111;
+  }
+
+  .cell:not(.empty) {
   }
 </style>
 
@@ -47,7 +61,11 @@
       return map;
     }, new Map());
 
-    for (const layer of keymap.layers)
+    for (const layer of keymap.layers) {
+      const layerElement = document.createElement("div");
+      layerElement.classList.add("layer");
+      canvasElement.appendChild(layerElement);
+
       for (let y = 0; y <= 5; y++)
         for (let x = 0; x <= 16; x++) {
           const cellElement = document.createElement("div");
@@ -59,13 +77,27 @@
             const layerIndex = matrix[0] * 6 + matrix[1];
             cellElement.innerText = layer[layerIndex]
               .replaceAll(/KC_NO/g, "")
-              .replaceAll(/KC_/g, "");
+              .replaceAll(/KC_/g, "")
+              .replaceAll(/MOD_/g, "")
+              .replaceAll(/LT\((\d),(\w+)\)/g, "$2\nL_$1")
+              .replaceAll(/MT\((\w+),(\w+)\)/g, "$2\n$1")
+              .replaceAll(/MO\((\w+)\)/g, "L_$1")
+              .replaceAll(/MS_BTN(\d)/g, "🖱$1")
+              .replaceAll(/[LR]GUI/g, "⌘")
+              .replaceAll(/[LR]ALT/g, "⌥")
+              .replaceAll(/[LR]CTL/g, "⌃")
+              .replaceAll(/[LR]SFT/g, "⇧")
+              .replaceAll(/CUSTOM\(0\)/g, "DPI")
+              .replaceAll(/CUSTOM\(2\)/g, "SNIPE DPI")
+              .replaceAll(/CUSTOM\(4\)/g, "SNIPE")
+              .replaceAll(/CUSTOM\(6\)/g, "SCROLL");
           } else {
             cellElement.classList.add("empty");
           }
 
-          canvasElement.appendChild(cellElement);
+          layerElement.appendChild(cellElement);
         }
+    }
   }
 
   main();
