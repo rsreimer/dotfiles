@@ -36,6 +36,7 @@ return {
         end, { "i", "s", "c" }),
       }),
       sources = cmp.config.sources({
+        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
       }, {
