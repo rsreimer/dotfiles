@@ -1,17 +1,19 @@
 <style>
   body {
     background-color: #333;
+    margin: 0;
   }
 
   #canvas {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
     gap: 32px;
+    padding: 16px;
   }
 
   .layer {
-    display: inline-grid;
-
+    display: grid;
     grid-template-columns: repeat(17, 1fr);
     grid-template-rows: repeat(6, 1fr);
     gap: 8px;
@@ -34,9 +36,6 @@
       0 -0.0625rem 0 0 #444,
       0 0.0625rem 0 0.1875rem #111;
   }
-
-  .cell:not(.empty) {
-  }
 </style>
 
 <div id="canvas"></div>
@@ -44,7 +43,7 @@
 <script>
   const keymaps = ["default", "custom", "miryoku-like"];
   const selectedKeymap =
-    new URL(document.location).searchParams.get("keymap") ?? "default";
+    new URL(document.location).searchParams.get("keymap") ?? "custom";
   const canvasElement = window.canvas;
 
   async function main() {
@@ -61,7 +60,8 @@
       return map;
     }, new Map());
 
-    for (const layer of keymap.layers) {
+    for (let i = 0; i < keymap.layers.length; i++) {
+      const layer = keymap.layers[i];
       const layerElement = document.createElement("div");
       layerElement.classList.add("layer");
       canvasElement.appendChild(layerElement);
