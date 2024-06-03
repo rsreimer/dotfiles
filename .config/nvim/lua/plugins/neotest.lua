@@ -47,7 +47,7 @@ return {
       {
         "<leader>tT",
         function()
-          require("neotest").run.run(vim.loop.cwd())
+          require("neotest").run.run(vim.uv.cwd())
         end,
         desc = "Run All",
       },
