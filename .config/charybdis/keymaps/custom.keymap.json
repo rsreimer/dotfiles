@@ -31,15 +31,15 @@
     ],
     [
       "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",
-      "KC_EXLM", "KC_LCBR", "KC_LPRN", "KC_RPRN", "KC_RCBR", "KC_QUES",
-      "KC_HASH", "KC_CIRC", "KC_EQL", "S(KC_MINS)", "KC_DLR", "KC_ASTR",
-      "KC_AT", "KC_LT", "KC_PIPE", "KC_MINS", "KC_GT", "KC_SLASH",
+      "KC_NO", "KC_LCBR", "KC_LPRN", "KC_RPRN", "KC_RCBR", "KC_QUES",
+      "KC_NO", "KC_CIRC", "KC_EQL", "S(KC_MINS)", "KC_DLR", "KC_ASTR",
+      "KC_NO", "KC_LT", "KC_PIPE", "KC_MINS", "KC_GT", "KC_SLSH",
       "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",
 
       "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",
-      "KC_NO", "KC_GRV", "KC_QUOT", "S(KC_QUOT)", "KC_SCLN", "KC_COMM",
-      "KC_TILD", "KC_AMPR", "KC_RBRC", "KC_LBRC", "KC_PLUS", "KC_BSLS",
-      "KC_NO", "KC_PERC", "S(KC_SCLN)", "KC_SCLN", "KC_DOT", "KC_NO",
+      "KC_NO", "KC_NO", "KC_QUOT", "S(KC_QUOT)", "KC_GRV", "KC_TILD",
+      "KC_NO", "KC_AMPR", "KC_PLUS", "KC_RBRC", "KC_LBRC", "KC_BSLS",
+      "KC_NO", "KC_PERC", "S(KC_SCLN)", "KC_EXLM", "KC_HASH", "KC_AT",
       "KC_NO", "KC_BSPC", "KC_NO", "KC_ENT", "KC_NO", "KC_NO"
     ],
     [
