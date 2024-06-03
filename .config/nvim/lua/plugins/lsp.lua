@@ -1,6 +1,5 @@
 return {
-  { "folke/neodev.nvim", opts = {} },
-  { "neovim/nvim-lspconfig", dependencies = { "folke/neodev.nvim" } },
+  { "neovim/nvim-lspconfig" },
   {
     "williamboman/mason.nvim",
     config = function()
@@ -15,7 +14,6 @@ return {
           "tsserver",
           "lua_ls",
           "yamlls",
-          "custom_elements_ls",
 
           -- Formatters
           "prettierd",

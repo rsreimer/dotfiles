@@ -18,7 +18,7 @@ function M.picker(opts)
   local vimgrep_arguments = opts.vimgrep_arguments or conf.vimgrep_arguments
   local search_dirs = opts.search_dirs
   local glob_aliases = opts.glob_aliases or default_glob_aliases
-  opts.cwd = opts.cwd and vim.fn.expand(opts.cwd) or vim.loop.cwd()
+  opts.cwd = opts.cwd and vim.fn.expand(opts.cwd) or vim.uv.cwd()
 
   if search_dirs then
     for i, path in ipairs(search_dirs) do
