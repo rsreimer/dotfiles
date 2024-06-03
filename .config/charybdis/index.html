@@ -9,7 +9,7 @@
     grid-template-columns: repeat(2, 1fr);
 
     gap: 32px;
-    padding: 16px;
+    padding: 8px;
   }
 
   .layer {
@@ -29,6 +29,7 @@
     padding: 3px;
     border-radius: 3px;
     font-family: monospace;
+    font-size: 1.3rem;
     font-weight: 400;
     color: #ddd;
     background-image: linear-gradient(to bottom, #222, #333, #444);
@@ -41,6 +42,103 @@
 <div id="canvas"></div>
 
 <script>
+  function getName(keycode) {
+    const KC_NAME = {
+      KC_NO: "",
+      KC_PPLS: "+",
+      KC_PMNS: "-",
+      KC_PAST: "*",
+      KC_PSLS: "/",
+      KC_PEQL: "=",
+      KC_PDOT: ".",
+      KC_TILD: "~",
+      KC_ENT: "↵",
+      KC_BSPC: "⌫",
+      KC_DEL: "⌦",
+      KC_LAYE: "",
+      KC_SPC: "␣",
+      KC_EXLM: "!",
+      KC_AT: "@",
+      KC_HASH: "#",
+      KC_DLR: "$",
+      KC_PERC: "%",
+      KC_CIRC: "^",
+      KC_AMPR: "&",
+      KC_ASTR: "*",
+      KC_LPRN: "(",
+      KC_RPRN: ")",
+      KC_UNDS: "_",
+      KC_PLUS: "+",
+      KC_LCBR: "{",
+      KC_RCBR: "}",
+      KC_PIPE: "|",
+      KC_COLN: ":",
+      KC_DQT: '"',
+      KC_LT: "<",
+      KC_GT: ">",
+      KC_QUES: "?",
+      KC_SLASH: "/",
+      KC_LEFT: "←",
+      KC_RGHT: "→",
+      KC_UP: "↑",
+      KC_DOWN: "↓",
+      KC_TAB: "⇥",
+      KC_PGUP: "⇞",
+      KC_PGDN: "⇟",
+      KC_HOME: "⇱",
+      KC_END: "⇲",
+      KC_TAB: "⇥",
+      KC_VOLU: "🔊",
+      KC_MUTE: "🔇",
+      KC_VOLD: "🔉",
+      KC_ESC: "⎋",
+      "S(KC_MINS)": "_",
+      KC_MINS: "-",
+      "S(KC_EQL)": "+",
+      KC_EQL: "=",
+      "S(KC_LBRC)": "{",
+      KC_LBRC: "[",
+      "S(KC_RBRC)": "}",
+      KC_RBRC: "]",
+      "S(KC_BSLS)": "|",
+      KC_BSLS: "\\",
+      "S(KC_SCLN)": ":",
+      KC_SCLN: ";",
+      "S(KC_QUOT)": '"',
+      KC_QUOT: "'",
+      "S(KC_GRV)": "~",
+      KC_GRV: "`",
+      "S(KC_COMM)": "<",
+      KC_COMM: ",",
+      "S(KC_DOT)": ">",
+      KC_DOT: ".",
+      "S(KC_SLSH)": "?",
+      KC_SLSH: "/",
+      "CUSTOM(0)": "DPI",
+      "CUSTOM(2)": "SNIPE DPI",
+      "CUSTOM(4)": "🎯", // SNIPE
+      "CUSTOM(6)": "⇳", // SCROLL
+    };
+
+    keycode = keycode
+      .replaceAll(/LT\((\d),(\w+)\)/g, "$2\n⇪$1")
+      .replaceAll(/MT\((\w+),(\w+)\)/g, "$2\n$1")
+      .replaceAll(/MO\((\w+)\)/g, "⇪$1")
+      .replaceAll(/MS_BTN(\d)/g, "🖱$1")
+      .replaceAll(/[LR]GUI/g, "⌘")
+      .replaceAll(/[LR]ALT/g, "⌥")
+      .replaceAll(/[LR]CTL/g, "⌃")
+      .replaceAll(/[LR]SFT/g, "⇧");
+
+    for (const [k, v] of Object.entries(KC_NAME)) {
+      keycode = keycode.replaceAll(k, v);
+    }
+
+    keycode = keycode.replaceAll(/KC_/g, "").replaceAll(/MOD_/g, "");
+
+    return keycode;
+  }
+
   const keymaps = ["default", "custom", "miryoku-like"];
   const selectedKeymap =
     new URL(document.location).searchParams.get("keymap") ?? "custom";
@@ -75,22 +173,7 @@
 
           if (matrix) {
             const layerIndex = matrix[0] * 6 + matrix[1];
-            cellElement.innerText = layer[layerIndex]
-              .replaceAll(/KC_NO/g, "")
-              .replaceAll(/KC_/g, "")
-              .replaceAll(/MOD_/g, "")
-              .replaceAll(/LT\((\d),(\w+)\)/g, "$2\nL_$1")
-              .replaceAll(/MT\((\w+),(\w+)\)/g, "$2\n$1")
-              .replaceAll(/MO\((\w+)\)/g, "L_$1")
-              .replaceAll(/MS_BTN(\d)/g, "🖱$1")
-              .replaceAll(/[LR]GUI/g, "⌘")
-              .replaceAll(/[LR]ALT/g, "⌥")
-              .replaceAll(/[LR]CTL/g, "⌃")
-              .replaceAll(/[LR]SFT/g, "⇧")
-              .replaceAll(/CUSTOM\(0\)/g, "DPI")
-              .replaceAll(/CUSTOM\(2\)/g, "SNIPE DPI")
-              .replaceAll(/CUSTOM\(4\)/g, "SNIPE")
-              .replaceAll(/CUSTOM\(6\)/g, "SCROLL");
+            cellElement.innerText = getName(layer[layerIndex]);
           } else {
             cellElement.classList.add("empty");
           }
