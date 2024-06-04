@@ -29,7 +29,7 @@
     padding: 3px;
     border-radius: 3px;
     font-family: monospace;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: #ddd;
     background-image: linear-gradient(to bottom, #222, #333, #444);
@@ -122,7 +122,7 @@
 
     keycode = keycode
       .replaceAll(/LT\((\d),(\w+)\)/g, "$2\n⇪$1")
-      .replaceAll(/MT\((\w+),(\w+)\)/g, "$2\n$1")
+      .replaceAll(/MT\((\w+),(.+)\)$/g, "$2\n$1")
       .replaceAll(/MO\((\w+)\)/g, "⇪$1")
       .replaceAll(/MS_BTN(\d)/g, "🖱$1")
       .replaceAll(/[LR]GUI/g, "⌘")

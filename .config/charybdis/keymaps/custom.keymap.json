@@ -32,13 +32,13 @@
     [
       "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",
       "KC_NO", "KC_LCBR", "KC_LPRN", "KC_RPRN", "KC_RCBR", "KC_QUES",
-      "KC_NO", "KC_CIRC", "KC_EQL", "S(KC_MINS)", "KC_DLR", "KC_ASTR",
+      "KC_NO", "MT(MOD_LCTL,KC_CIRC)", "MT(MOD_LALT,KC_EQL)", "MT(MOD_LGUI,S(KC_MINS))", "MT(MOD_LSFT,KC_DLR)", "KC_ASTR",
       "KC_NO", "KC_LT", "KC_PIPE", "KC_MINS", "KC_GT", "KC_SLSH",
       "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",
 
       "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO", "KC_NO",
       "KC_NO", "KC_NO", "KC_QUOT", "S(KC_QUOT)", "KC_GRV", "KC_TILD",
-      "KC_NO", "KC_AMPR", "KC_PLUS", "KC_RBRC", "KC_LBRC", "KC_BSLS",
+      "KC_NO", "MT(MOD_LCTL,KC_AMPR)", "MT(MOD_LALT,KC_PLUS)", "MT(MOD_LGUI,KC_RBRC)", "MT(MOD_LSFT,KC_LBRC)", "KC_BSLS",
       "KC_NO", "KC_PERC", "S(KC_SCLN)", "KC_EXLM", "KC_HASH", "KC_AT",
       "KC_NO", "KC_BSPC", "KC_NO", "KC_ENT", "KC_NO", "KC_NO"
     ],
