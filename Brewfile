@@ -22,6 +22,7 @@ brew "neovim"
 brew "openssl@1.1"
 brew "postgresql@15", restart_service: true
 brew "ripgrep"
+brew "tldr"
 brew "tree"
 brew "azure/functions/azure-functions-core-tools@4"
 brew "qmk/qmk/qmk"
