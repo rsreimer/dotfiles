@@ -6,6 +6,7 @@ vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
 local opt = vim.opt
 
+opt.conceallevel = 0 -- No conceal
 opt.autowrite = true -- Enable auto write
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.completeopt = "menu,menuone,noselect"

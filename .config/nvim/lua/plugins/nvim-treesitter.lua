@@ -58,4 +58,9 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+
+    require("nvim-treesitter.parsers").filetype_to_parsername.mdx = "markdown"
+  end,
 }
