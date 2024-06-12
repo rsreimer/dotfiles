@@ -14,6 +14,7 @@ return {
           "tsserver",
           "lua_ls",
           "yamlls",
+          "emmet_language_server",
 
           -- Formatters
           "prettierd",
