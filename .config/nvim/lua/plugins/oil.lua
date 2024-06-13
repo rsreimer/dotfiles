@@ -6,7 +6,7 @@ return {
     skip_confirm_for_simple_edits = true,
     view_options = {
       is_hidden_file = function(name)
-        return name == ".git"
+        return name == ".." or name == ".git"
       end,
     },
     keymaps = {
