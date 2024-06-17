@@ -116,12 +116,25 @@ function M.update()
 end
 
 function M.get_lualine()
-  local contents = {}
   local current_file_path = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":.")
+  local is_current_file_listed = false
+  local contents = {}
 
   for _, item in pairs(M.items) do
-    local label = current_file_path == item.value and item.label_active or item.label_inactive
+    local label = item.label_inactive
+
+    if current_file_path == item.value then
+      is_current_file_listed = true
+      label = item.label_active
+    end
+
     table.insert(contents, label)
+  end
+
+  if (not is_current_file_listed) and (current_file_path ~= "") then
+    local sections = string.split(current_file_path, "/")
+    local current_file = sections[#sections]
+    table.insert(contents, string.format("  %%#HarpoonActive#%s", current_file))
   end
 
   return table.concat(contents, "  ")
