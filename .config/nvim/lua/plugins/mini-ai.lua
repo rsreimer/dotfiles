@@ -7,7 +7,7 @@ return {
       n_lines = 500,
       custom_textobjects = {
         f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
-        ["t"] = { "<([%w_-]-)%f[^<%w_-][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
+        t = { "<([%w_-]-)%f[^<%w_-][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
         g = function()
           return {
             from = { line = 1, col = 1 },
