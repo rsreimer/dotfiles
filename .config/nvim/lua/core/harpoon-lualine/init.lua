@@ -78,7 +78,7 @@ function M.update()
     local harpoonItem = harpoon:list():get(index)
 
     if harpoonItem ~= nil and harpoonItem.value ~= "" then
-      local path = string.startswith(harpoonItem.value, "oil://")
+      local path = string.starts_with(harpoonItem.value, "oil://")
           and string.sub(harpoonItem.value, 1 + string.len("oil://" .. vim.fn.getcwd() .. "/"))
         or harpoonItem.value
 
