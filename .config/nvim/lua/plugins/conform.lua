@@ -32,6 +32,15 @@ return {
       }
     end,
   },
+  config = function(_, opts)
+    local conform = require("conform")
+
+    conform.setup(opts)
+
+    vim.api.nvim_create_user_command("Format", function()
+      conform.format({ async = true, lsp_fallback = true })
+    end, {})
+  end,
   keys = {
     {
       "<leader>uf",
