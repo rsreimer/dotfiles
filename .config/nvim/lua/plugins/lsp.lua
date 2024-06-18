@@ -97,19 +97,17 @@ return {
           vim.keymap.set(mode, lhs, rhs, { buffer = event.buf, desc = desc })
         end
 
-        -- See `:help vim.lsp.*` for documentation on any of the below functions
-        bmap("n", "K", vim.lsp.buf.hover, "Hover")
-        bmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Signature Help")
-
         bmap("n", "gd", vim.lsp.buf.definition, "Definition")
         bmap("n", "gD", vim.lsp.buf.type_definition, "Type Definition")
         bmap("n", "gi", vim.lsp.buf.implementation, "Implementation")
-        bmap("n", "gr", vim.lsp.buf.references, "References")
         bmap("n", "gl", vim.diagnostic.open_float, "Open Float")
+        bmap("n", "K", vim.lsp.buf.hover, "Hover")
+        bmap("n", "grn", vim.lsp.buf.rename, "Rename")
+        bmap("n", "gra", vim.lsp.buf.code_action, "Code Actions")
+        bmap("n", "grr", vim.lsp.buf.references, "References")
+        bmap({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, "Signature Help")
 
         -- stylua: ignore start
-        bmap("n", "<leader>cr", vim.lsp.buf.rename, "Rename")
-        bmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code Actions")
         bmap("n", "<leader>ci", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source.addMissingImports.ts" } } }) end, "Add Missing Imports")
         bmap("n", "<leader>cu", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source.removeUnusedImports.ts" } } }) end, "Removed Unused Imports")
         bmap("n", "<leader>cD", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source.fixAll.ts" } } }) end, "Fix all diagnostics")
