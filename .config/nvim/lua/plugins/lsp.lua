@@ -19,6 +19,7 @@ return {
         "lua_ls",
         "yamlls",
         "emmet_language_server",
+        "latex",
 
         -- Formatters
         "prettierd",

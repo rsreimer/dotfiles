@@ -37,6 +37,7 @@ return {
       "markdown",
       "markdown_inline",
       "yaml",
+      "bibtex",
     },
     incremental_selection = {
       enable = true,
