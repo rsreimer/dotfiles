@@ -1,5 +1,12 @@
 {
+  "scripts": {
+    "build": "tsx generate-image.ts",
+    "start": "http-server -c-1"
+  },
   "dependencies": {
-    "puppeteer": "^22.11.1"
+    "@types/http-server": "^0.12.4",
+    "http-server": "^14.1.1",
+    "puppeteer": "^22.11.1",
+    "tsx": "^4.15.6"
   }
 }
