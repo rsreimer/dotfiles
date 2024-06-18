@@ -5,6 +5,9 @@
 !/.config/charybdis
 !/.config/zed/settings.json
 !/.config/kitty
+!/.config/lazygit
+/.config/lazygit/*
+!/.config/lazygit/config.yml
 !/.ideavimrc
 !/.zprofile
 !/.zshrc
