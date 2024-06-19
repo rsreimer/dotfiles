@@ -2,11 +2,12 @@ return {
   "echasnovski/mini.ai",
   opts = function()
     local ai = require("mini.ai")
+    local treesitter = ai.gen_spec.treesitter
 
     return {
       n_lines = 500,
       custom_textobjects = {
-        f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+        f = treesitter({ a = "@function.outer", i = "@function.inner" }),
         t = { "<([%w_-]-)%f[^<%w_-][^<>]->.-</%1>", "^<.->().*()</[^/]->$" },
         g = function()
           return {
