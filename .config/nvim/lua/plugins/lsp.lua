@@ -19,18 +19,17 @@ return {
         "lua_ls",
         "yamlls",
         "emmet_language_server",
-        "latex",
 
-        -- Formatters
-        "prettierd",
-        "stylua",
-        "shfmt",
-
-        -- Linters
-        "eslint",
-
-        -- DAPs
-        "js-debug-adapter",
+        -- -- Formatters
+        -- "prettierd",
+        -- "stylua",
+        -- "shfmt",
+        --
+        -- -- Linters
+        -- "eslint",
+        --
+        -- -- DAPs
+        -- "js-debug-adapter",
       },
     })
 
@@ -103,15 +102,15 @@ return {
         bmap("n", "gi", vim.lsp.buf.implementation, "Implementation")
         bmap("n", "gl", vim.diagnostic.open_float, "Open Float")
         bmap("n", "K", vim.lsp.buf.hover, "Hover")
-        bmap("n", "grn", vim.lsp.buf.rename, "Rename")
-        bmap("n", "gra", vim.lsp.buf.code_action, "Code Actions")
-        bmap("n", "grr", vim.lsp.buf.references, "References")
         bmap({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, "Signature Help")
 
         -- stylua: ignore start
-        bmap("n", "<leader>ci", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source.addMissingImports.ts" } } }) end, "Add Missing Imports")
-        bmap("n", "<leader>cu", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source.removeUnusedImports.ts" } } }) end, "Removed Unused Imports")
-        bmap("n", "<leader>cD", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source.fixAll.ts" } } }) end, "Fix all diagnostics")
+        bmap("n", "grn", vim.lsp.buf.rename, "Rename")
+        bmap("n", "gra", vim.lsp.buf.code_action, "Code Actions")
+        bmap("n", "grr", vim.lsp.buf.references, "References")
+        bmap("n", "gri", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source.addMissingImports.ts" } } }) end, "Add Missing Imports")
+        bmap("n", "gru", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source.removeUnusedImports" } } }) end, "Removed Unused Imports")
+        bmap("n", "grd", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source.fixAll.ts" } } }) end, "Fix all diagnostics")
         -- stylua: ignore end
 
         bmap("n", "[d", vim.diagnostic.goto_prev, "Prev Diagnostic")
