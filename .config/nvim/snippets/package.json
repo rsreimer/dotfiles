@@ -43,6 +43,12 @@
           "angular"
         ],
         "path": "./snippets/angular.json"
+      },
+      {
+        "language": [
+          "tex"
+        ],
+        "path": "./snippets/tex.json"
       }
     ]
   }

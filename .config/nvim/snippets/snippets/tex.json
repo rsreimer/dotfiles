@@ -1,0 +1,32 @@
+{
+  "environment": {
+    "prefix": "benv",
+    "body": "\\begin{${1:env}}\n\t${0:${TM_SELECTED_TEXT}}\\end{${1:env}}",
+    "description": "environment"
+  },
+  "itemize": {
+    "prefix": "bitem",
+    "body": "\\begin{itemize}\n\t\\item ${0:${TM_SELECTED_TEXT}}\n\\end{itemize}",
+    "description": "itemize environment"
+  },
+  "enumerate": {
+    "prefix": "benum",
+    "body": "\\begin{enumerate}\n\t\\item ${0:${TM_SELECTED_TEXT}}\n\\end{enumerate}",
+    "description": "enumerate environment"
+  },
+  "frame": {
+    "prefix": "bfra",
+    "body": "\\begin{frame}{${1:<title>}}\n\t${0:${TM_SELECTED_TEXT}}\\end{frame}",
+    "description": "frame"
+  },
+  "figure": {
+    "prefix": "bfig",
+    "body": "\\begin{figure}[${1:htbp}]\n\t\\centering\n\t${0:${TM_SELECTED_TEXT}}\n\t\\caption{${2:<caption>}}\\label{${3:<label>}}\n\\end{figure}",
+    "description": "figure"
+  },
+  "tikzpicture": {
+    "prefix": "bpic",
+    "body": "\\begin{tikzpicture}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{tikzpicture}",
+    "description": "tikzpicture"
+  }
+}
