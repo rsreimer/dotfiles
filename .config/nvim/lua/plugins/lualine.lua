@@ -6,7 +6,14 @@ return {
   opts = {
     sections = {
       lualine_a = { "mode" },
-      lualine_b = { "branch", "diff", "diagnostics" },
+      lualine_b = {
+        function()
+          return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+        end,
+        "branch",
+        "diff",
+        "diagnostics",
+      },
       lualine_c = { { "filename", path = 1 } },
       lualine_x = {
         function()
