@@ -34,8 +34,6 @@ return {
         { "<leader>sd", function() core_finders.find_directory() end, desc = "Find Directories" },
         { "<leader>sg", function() core_finders.find_text() end, desc = "Grep" },
         { "<leader>sG", function() core_finders.find_text_in_dir() end, desc = "Grep in Directory" },
-        { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Commits" },
-        { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Status" },
         { "<leader>sb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
         { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
         { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands" },

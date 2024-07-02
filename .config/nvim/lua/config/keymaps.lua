@@ -3,14 +3,6 @@ local map = vim.keymap.set
 -- LSP
 map("n", "<leader>cz", "<cmd>LspRestart<cr>", { desc = "Restart LSPs" })
 
--- Git
-map("n", "<leader>ghf", "<cmd>Telescope git_bcommits<cr>", { desc = "File history" })
-map("v", "<leader>ghf", "<cmd>Telescope git_bcommits_range<cr>", { desc = "Selection history" })
-map("n", "<leader>gp", "<cmd>Git pull<cr>", { desc = "Pull" })
-map("n", "<leader>gP", "<cmd>Git push<cr>", { desc = "Push" })
-map("n", "<leader>gb", ":Git checkout ", { desc = "Checkout" })
-map("n", "<leader>gn", ":Git checkout -b ", { desc = "New branch" })
-
 -- Search/Replace
 map("n", "<leader>r", ":%s//c<left><left>", { desc = "Replace" })
 map("v", "<leader>r", '"sy:%s/<c-r>s//c<left><left>', { desc = "Replace" })
